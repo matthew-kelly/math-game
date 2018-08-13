@@ -1,0 +1,23 @@
+## Classes
+- Math Game
+  - Main class, holds structure of game, game loop (alternates players turns), keeps track of current_player?
+  - defines structure, creates new players, new turns, and new questions
+  - I/O?
+    - no
+- Player 
+  - player1, player2
+  - tracks life total
+  - I/O?
+    - no
+- Turn
+  - new obj created for each turn
+  - calls for new question obj
+  - includes checking for game over (no lives left)?
+  - I/O?
+    - no
+- Question
+  - calls two random numbers from 1 to 20
+  - asks current player question
+  - checks answer
+  - I/O?
+    - YES
