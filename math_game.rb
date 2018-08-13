@@ -19,19 +19,20 @@ class Math_Game
 
   def new_turn
     while @player1.lives > 0 && @player2.lives > 0
-      puts "-------------- NEW TURN: PLAYER #{active_player.id} --------------"
+      puts "---------- NEW TURN: PLAYER #{active_player.id} ---------"
       question
     end
     puts "-------------- GAME OVER --------------"
-    puts "Player #{@active_player.id} wins! Player 1: #{@player1.lives}/3, Player 2: #{@player2.lives}/3"
+    puts "Player #{@active_player.id} wins with #{@active_player.lives}/3 lives left"
     puts "---------------------------------------"
   end
 
   def question
-    a = rand(1...2)
-    b = rand(1...2)
+    a = rand(1...20)
+    b = rand(1...20)
     answer = a + b
-    print "Player #{@active_player.id}: What is #{a} plus #{b}? "
+    puts "Player #{@active_player.id}: What is #{a} plus #{b}?"
+    print "Answer: "
     user_input = gets.chomp.to_i
 
     if user_input == answer
@@ -41,7 +42,7 @@ class Math_Game
       @active_player.lose_life
     end
 
-    puts "Current Score: Player 1: #{@player1.lives}/3, Player 2: #{@player2.lives}/3"
+    puts "P1: #{@player1.lives}/3, P2: #{@player2.lives}/3"
     change_active_player
   end
 
